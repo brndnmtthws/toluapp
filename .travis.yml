@@ -73,8 +73,7 @@ matrix:
 before_install:
     - |
      if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-       brew update;
-       brew install lua ccache;
+       HOMEBREW_NO_AUTO_UPDATE=1 brew install lua ccache;
        export PATH="/usr/local/opt/ccache/libexec:$PATH";
      fi
     - eval "${MATRIX_EVAL}"
